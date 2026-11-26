@@ -2,7 +2,7 @@
 
 A full-stack web application and custom REST API that lets users search Wikipedia and read full articles in a clean, distraction-free interface—without ever leaving the site.
 
-🔗 **Live Website:** [https://your-app-name.onrender.com]([https://your-app-name.onrender.com](https://wiki-search-app.onrender.com/))  
+🔗 **Live Website:** [https://wiki-search-app.onrender.com/]  
 *(Note: Hosted on Render's free tier, so the first load after inactivity may take ~30 seconds to wake up.)*
 
 ---
