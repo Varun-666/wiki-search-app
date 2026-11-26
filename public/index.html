@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WikiAtlas — Instant Knowledge Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Sticky Glass Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-inner">
+      <button id="brand-btn" class="brand" type="button" title="Go home">
+        <span class="brand-icon" aria-hidden="true">W</span>
+        <span class="brand-name">WikiAtlas</span>
+      </button>
+
+      <form id="search-form" class="search-bar">
+        <span class="search-icon" aria-hidden="true">⌕</span>
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Search topics... (Press / to focus)"
+          autocomplete="off"
+          required
+        />
+        <button id="clear-btn" class="clear-btn hidden" type="button" aria-label="Clear search">
+          ×
+        </button>
+        <button type="submit" class="search-submit">Search</button>
+      </form>
+
+      <button id="theme-toggle" class="icon-btn" type="button" aria-label="Toggle dark mode" title="Toggle theme">
+        🌙
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Welcome / Empty State -->
+    <section id="empty-state" class="empty-state">
+      <div class="badge">Live Wikipedia API Explorer</div>
+      <h1>Explore human knowledge, distraction-free.</h1>
+      <p class="hero-subtitle">
+        Search millions of Wikipedia articles through your custom Node.js API and read them in a clean, ad-free reader.
+      </p>
+
+      <div class="suggestions">
+        <span class="suggestions-label">Try searching:</span>
+        <button class="topic-chip" type="button" data-query="Germany">Germany</button>
+        <button class="topic-chip" type="button" data-query="Black hole">Black hole</button>
+        <button class="topic-chip" type="button" data-query="Renaissance">Renaissance</button>
+        <button class="topic-chip" type="button" data-query="Artificial intelligence">Artificial intelligence</button>
+        <button class="topic-chip" type="button" data-query="Tokyo">Tokyo</button>
+      </div>
+    </section>
+
+    <!-- Status / Error Message -->
+    <div id="status" class="status"></div>
+
+    <!-- Animated Skeleton Loader -->
+    <div id="skeleton-loader" class="hidden"></div>
+
+    <!-- Search Results List -->
+    <section id="results" class="results-grid"></section>
+
+    <!-- Full Article Reader + Table of Contents -->
+    <section id="article-layout" class="article-layout hidden">
+      <aside id="toc-sidebar" class="toc-sidebar hidden">
+        <div class="toc-card">
+          <div class="toc-title">On this page</div>
+          <nav id="toc-list"></nav>
+        </div>
+      </aside>
+
+      <article id="article-view" class="article-card">
+        <div class="article-topbar">
+          <button id="back-btn" class="back-btn" type="button">← Back to results</button>
+          <span id="article-meta" class="article-meta"></span>
+        </div>
+
+        <h1 id="article-title"></h1>
+        <div id="article-categories" class="categories"></div>
+
+        <figure id="article-figure" class="article-figure hidden">
+          <img id="article-image" alt="" />
+        </figure>
+
+        <div id="article-content" class="article-content"></div>
+      </article>
+    </section>
+  </main>
+
+  <button id="scroll-top-btn" class="scroll-top-btn hidden" type="button" aria-label="Scroll to top">
+    ↑
+  </button>
+
+  <script src="app.js"></script>
+</body>
+</html>
